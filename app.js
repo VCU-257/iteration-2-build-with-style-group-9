@@ -30,18 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
         savedTotal++;
         icon.classList.remove("bi-bookmark");
         icon.classList.add("bi-bookmark-fill");
-        saveSuccess.classList.remove("d-none");
+        if (saveSuccess) saveSuccess.classList.remove("d-none");
       } else {
         savedTotal--;
         icon.classList.remove("bi-bookmark-fill");
         icon.classList.add("bi-bookmark");
       }
 
-      savedCount.textContent = savedTotal;
+      if (savedCount) savedCount.textContent = savedTotal;
     });
   });
 
   const filterForm = document.getElementById("filterForm");
+  if (!filterForm) return;
+
   const keywordInput = document.getElementById("fm4");
   const distanceInput = document.getElementById("fm1");
   const sizeInput = document.getElementById("fm2");
