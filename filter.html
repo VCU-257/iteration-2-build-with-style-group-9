@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar fixed-bottom navbar-light bg-primary">
+
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+
+        <div class="btn-group dropup">
+            <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Filter
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end" style="max-width: max-content; min-width: max-content;">
+
+                <form class="m-3" id="dropupForm">
+                    <div class="form-group">
+                        <label for="fm1" class="form-label">
+                            Distance (Miles, Maximum)
+                        </label>
+                        <input type="range" class="form-range" id="fm1" placeholder="0" min="0" max="100" value="0"
+                               required>
+                        <output for="fm1" id="rangeVal" aria-hidden="true"></output>
+                        <script>
+                            rangeIn = document.getElementById('fm1');
+                            rangeOut = document.getElementById('rangeVal');
+                            rangeOut.textContent = rangeIn.value;
+
+                            rangeIn.addEventListener('input', function () {
+                                rangeOut.textContent = this.value;
+                            })
+                        </script>
+                    </div>
+                    <div class="form-group">
+                        <label for="fm2" class="form-label">
+                            Event size (People, Minimum)
+                        </label>
+                        <input type="range" class="form-range" id="fm2" placeholder="0" min="0" max="10000" step="10"
+                               value="0" required>
+                        <output for="fm2" id="rangeVal2" aria-hidden="true"></output>
+                        <script>
+                            rangeIn2 = document.getElementById('fm2');
+                            rangeOut2 = document.getElementById('rangeVal2');
+                            rangeOut2.textContent = rangeIn2.value;
+
+                            rangeIn2.addEventListener('input', function () {
+                                rangeOut2.textContent = this.value;
+                            })
+                        </script>
+                    </div>
+                    <div class="form-group">
+                        <label for="fm3" class="form-label">
+                            Cost (USD, Maximum)
+                        </label>
+                        <input type="range" class="form-range" id="fm3" placeholder="0" min="0" max="100" value="0"
+                               required>
+                        <output for="fm3" id="price" aria-hidden="true"></output>
+                        <script>
+                            rangeIn3 = document.getElementById('fm3');
+                            rangeOut3 = document.getElementById('price');
+                            rangeOut3.textContent = rangeIn3.value;
+
+                            rangeIn3.addEventListener('input', function () {
+                                rangeOut3.textContent = this.value;
+                            })
+                        </script>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="fm4" class="form-label" id="textIn">
+                            Key Word
+                        </label>
+                        <input type="text" class="form-control" id="fm4">
+
+                    </div>
+                    <div class=" form-group py-2">
+                        <button type="submit" class="btn btn-primary" id="submitButton">
+                            Submit
+                        </button>
+                    </div>
+
+
+                    <script>
+                        $(document).ready(function () {
+                            $("#dropupForm").on("submit", function (e) {
+                                e.preventDefault();
+                                const dist = parseInt($("#fm1").val()) || 100;
+                                const size = parseInt($("#fm2").val()) || 0;
+                                const priceLim = parseInt($("#fm3").val()) || 100;
+                                const keyword = ("#textIn").val().toLowerCase();
+                                $('#rangeVal').text(dist === Infinity ? "All" : dist);
+                                $('#price').text(priceLim === Infinity ? "All" : dist);
+
+
+                                $("#eventGrid").each(function () {
+                                    const $item = $(this);
+                                    const itemDist = parseInt($('rangeVal').val());
+                                    const itemSize = parseInt($('rangeVal2').val());
+                                    const itemPrice = parseInt($('price').val());
+                                    const itemKey = $item.text().toLowerCase();
+
+                                    const matchD = itemDist <= dist;
+                                    const matchS = itemSize >= size;
+                                    const matchP = itemPrice <= priceLim;
+                                    const matchK = itemKey.indexOf(keyword) > -1;
+                                    $item.toggle(matchD && matchS && matchP && matchK);
+                                });
+                            });
+                        });
+                    </script>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+</html>
