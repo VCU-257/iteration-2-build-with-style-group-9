@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Events</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm sticky-top">
+    <div class="container-fluid app-shell">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-calendar-event"></i>
+        Campus Events
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-circle me-1"></i>Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-people-fill me-1"></i>Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-geo-alt-fill me-1"></i>Map</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-calendar me-1"></i>Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-headset me-1"></i>Support</a></li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              User
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">View Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="app-shell py-4">
+
+    <div class="mb-4">
+      <div class="card border-0 shadow-sm hero-card">
+        <div class="card-body p-4">
+          <span class="badge app-badge mb-2">Near Campus</span>
+          <h1 class="h3 mb-2">Find Events Near Campus</h1>
+          <p class="card-text mb-0">Browse events for new students by location and category.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="filterSuccess" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+      Filters applied successfully.
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <div id="saveSuccess" class="alert alert-info alert-dismissible fade show d-none" role="alert">
+      Event saved successfully.
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <p class="mb-0 text-secondary"><span id="resultsCount">4</span> events found</p>
+      <div class="saved-pill">
+        <i class="bi bi-bookmark-fill me-1"></i>
+        Saved: <span id="savedCount">0</span>
+      </div>
+    </div>
+
+    <div class="row g-4" id="eventGrid">
+      <div
+        class="col-12 event-item"
+        data-title="New Student Orientation"
+        data-category="Orientation"
+        data-distance="2"
+        data-size="350"
+        data-cost="0"
+      >
+        <div class="card border-0 shadow-sm event-card">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Orientation event">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge text-bg-primary">Orientation</span>
+              <button class="btn btn-sm btn-outline-primary save-btn" aria-label="Save event">
+                <i class="bi bi-bookmark"></i>
+              </button>
+            </div>
+            <h5 class="card-title">New Student Orientation</h5>
+            <p class="card-text">Get introduced to campus resources, student life, and support services.</p>
+            <ul class="list-unstyled small text-secondary mb-3">
+              <li><i class="bi bi-calendar-event me-2"></i>April 18, 2026</li>
+              <li><i class="bi bi-clock me-2"></i>11:00 AM</li>
+              <li><i class="bi bi-geo-alt-fill me-2"></i>Student Commons</li>
+            </ul>
+
+            <div class="event-stats small text-secondary mb-3">
+              <div><strong>Distance:</strong> 2 miles</div>
+              <div><strong>Size:</strong> 350 attendees</div>
+              <div><strong>Cost:</strong> $0</div>
+            </div>
+
+            <p class="card-text"><small class="text-body-secondary">Category: Orientation</small></p>
+            <a href="Event Details Page.html" class="btn btn-primary">
+              <i class="bi bi-share me-1"></i> View Event
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-12 event-item"
+        data-title="Campus Tour"
+        data-category="Tour"
+        data-distance="1"
+        data-size="80"
+        data-cost="0"
+      >
+        <div class="card border-0 shadow-sm event-card">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Campus tour">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge text-bg-info">Tour</span>
+              <button class="btn btn-sm btn-outline-primary save-btn" aria-label="Save event">
+                <i class="bi bi-bookmark"></i>
+              </button>
+            </div>
+            <h5 class="card-title">Campus Tour</h5>
+            <p class="card-text">Explore important academic buildings, student centers, and study spaces.</p>
+            <ul class="list-unstyled small text-secondary mb-3">
+              <li><i class="bi bi-calendar-event me-2"></i>April 19, 2026</li>
+              <li><i class="bi bi-clock me-2"></i>1:00 PM</li>
+              <li><i class="bi bi-geo-alt-fill me-2"></i>Library Plaza</li>
+            </ul>
+
+            <div class="event-stats small text-secondary mb-3">
+              <div><strong>Distance:</strong> 1 mile</div>
+              <div><strong>Size:</strong> 80 attendees</div>
+              <div><strong>Cost:</strong> $0</div>
+            </div>
+
+            <p class="card-text"><small class="text-body-secondary">Category: Tour</small></p>
+            <a href="Event Details Page.html" class="btn btn-primary">
+              <i class="bi bi-share me-1"></i> View Event
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-12 event-item"
+        data-title="Student Club Fair"
+        data-category="Community"
+        data-distance="4"
+        data-size="500"
+        data-cost="5"
+      >
+        <div class="card border-0 shadow-sm event-card">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Club fair">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge text-bg-warning">Community</span>
+              <button class="btn btn-sm btn-outline-primary save-btn" aria-label="Save event">
+                <i class="bi bi-bookmark"></i>
+              </button>
+            </div>
+            <h5 class="card-title">Student Club Fair</h5>
+            <p class="card-text">Meet student organizations and learn how to get involved on campus.</p>
+            <ul class="list-unstyled small text-secondary mb-3">
+              <li><i class="bi bi-calendar-event me-2"></i>April 20, 2026</li>
+              <li><i class="bi bi-clock me-2"></i>2:30 PM</li>
+              <li><i class="bi bi-geo-alt-fill me-2"></i>Engineering Hall</li>
+            </ul>
+
+            <div class="event-stats small text-secondary mb-3">
+              <div><strong>Distance:</strong> 4 miles</div>
+              <div><strong>Size:</strong> 500 attendees</div>
+              <div><strong>Cost:</strong> $5</div>
+            </div>
+
+            <p class="card-text"><small class="text-body-secondary">Category: Community</small></p>
+            <a href="Event Details Page.html" class="btn btn-primary">
+              <i class="bi bi-share me-1"></i> View Event
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-12 event-item"
+        data-title="Academic Advising Workshop"
+        data-category="Support"
+        data-distance="3"
+        data-size="120"
+        data-cost="10"
+      >
+        <div class="card border-0 shadow-sm event-card">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Advising workshop">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge text-bg-success">Support</span>
+              <button class="btn btn-sm btn-outline-primary save-btn" aria-label="Save event">
+                <i class="bi bi-bookmark"></i>
+              </button>
+            </div>
+            <h5 class="card-title">Academic Advising Workshop</h5>
+            <p class="card-text">Learn about course registration, degree planning, and academic success tips.</p>
+            <ul class="list-unstyled small text-secondary mb-3">
+              <li><i class="bi bi-calendar-event me-2"></i>April 21, 2026</li>
+              <li><i class="bi bi-clock me-2"></i>10:00 AM</li>
+              <li><i class="bi bi-geo-alt-fill me-2"></i>Academic Center</li>
+            </ul>
+
+            <div class="event-stats small text-secondary mb-3">
+              <div><strong>Distance:</strong> 3 miles</div>
+              <div><strong>Size:</strong> 120 attendees</div>
+              <div><strong>Cost:</strong> $10</div>
+            </div>
+
+            <p class="card-text"><small class="text-body-secondary">Category: Support</small></p>
+            <a href="Event Details Page.html" class="btn btn-primary">
+              <i class="bi bi-share me-1"></i> View Event
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="emptyState" class="text-center py-5 d-none">
+      <i class="bi bi-search fs-1 d-block mb-3 text-secondary"></i>
+      <h3 class="h4">No events found</h3>
+      <p class="text-secondary">Try changing your filter settings.</p>
+    </div>
+
+    <nav aria-label="Event list pages" class="mt-4">
+      <ul class="pagination pagination-sm justify-content-center">
+        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <nav class="navbar fixed-bottom bg-white border-top shadow-lg filter-bar">
+    <div class="container-fluid app-shell d-flex justify-content-between align-items-center">
+      <span class="navbar-brand mb-0 h1">Filter</span>
+
+      <div class="btn-group dropup">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <i class="bi bi-filter me-1"></i> Filter Events
+        </button>
+
+        <div class="dropdown-menu dropdown-menu-end p-3 filter-menu">
+          <form id="filterForm">
+            <div class="mb-3">
+              <label for="fm1" class="form-label">Distance (Miles)</label>
+              <input type="range" class="form-range" id="fm1" min="0" max="100" value="0">
+              <div class="small text-secondary">Max: <span id="rangeVal">0</span></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="fm2" class="form-label">Event Size (minimum)</label>
+              <input type="range" class="form-range" id="fm2" min="0" max="10000" step="10" value="0">
+              <div class="small text-secondary">Min: <span id="rangeVal2">0</span></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="fm3" class="form-label">Cost (USD)</label>
+              <input type="range" class="form-range" id="fm3" min="0" max="100" value="100">
+              <div class="small text-secondary">Max: <span id="rangeVal3">100</span></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="fm4" class="form-label">Keyword</label>
+              <input type="text" class="form-control" id="fm4" placeholder="orientation, tour, club">
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Apply</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

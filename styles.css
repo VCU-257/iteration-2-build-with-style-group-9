@@ -1,0 +1,133 @@
+:root {
+  --app-primary: #137ea7;
+  --app-secondary: #f0f0f0;
+  --app-background: #f6f6f6;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--app-background);
+  padding-bottom: 85px;
+}
+
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.navbar-collapse {
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.navbar-brand,
+.nav-link.active {
+  color: var(--app-primary) !important;
+}
+
+.hero-card {
+  border-radius: 1rem;
+  background: linear-gradient(to right, #f6f6f6, #ffffff);
+}
+
+.event-card,
+.filter-menu {
+  border-radius: 1rem;
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.event-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.event-stats {
+  background: #f8fbfd;
+  border: 1px solid #e0edf2;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
+
+.btn-primary {
+  background-color: var(--app-primary);
+  border-color: var(--app-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #106c90;
+  border-color: #106c90;
+}
+
+.btn-outline-primary {
+  color: var(--app-primary);
+  border-color: var(--app-primary);
+}
+
+.btn-outline-primary:hover,
+.save-btn.saved {
+  background-color: var(--app-primary);
+  color: #fff;
+  border-color: var(--app-primary);
+}
+
+.app-badge {
+  background-color: var(--app-primary);
+  color: #fff;
+}
+
+.saved-pill {
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 700;
+}
+
+.filter-bar {
+  max-width: 430px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.filter-menu {
+  min-width: 280px;
+  max-width: 320px;
+}
+
+@media (min-width: 768px) {
+  body,
+  .app-shell,
+  .filter-bar {
+    max-width: 760px;
+  }
+
+  .card-img-top {
+    height: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  body,
+  .app-shell,
+  .filter-bar {
+    max-width: 960px;
+  }
+}
