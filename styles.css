@@ -216,6 +216,7 @@ body {
 .filter-menu {
   min-width: 280px;
   max-width: 320px;
+  width: calc(100vw - 2rem);
 }
 
 /*Responsive tag*/
@@ -225,6 +226,12 @@ body {
   .app-shell,
   .filter-bar {
     max-width: 760px;
+  }
+
+  .filter-menu {
+    min-width: 360px;
+    max-width: 480px;
+    width: auto;
   }
 
   .card-img-top {
@@ -275,12 +282,53 @@ body {
   }
 }
 
+/* Print / PDF export */
+@media print {
+  .app-navbar,
+  .offcanvas,
+  nav[aria-label="breadcrumb"],
+  .d-flex.justify-content-between.align-items-center.mb-3,
+  .carousel-control-prev,
+  .carousel-control-next,
+  .carousel-indicators,
+  #sharePdfBtn,
+  .save-btn,
+  .btn-primary,
+  .filter-bar {
+    display: none !important;
+  }
+
+  body {
+    max-width: 100%;
+    background: #fff;
+    padding-bottom: 0;
+  }
+
+  .app-shell {
+    max-width: 100%;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  .carousel-item:not(.active) {
+    display: none;
+  }
+}
+
 /* Desktop: rectangular tiles, two per row */
 @media (min-width: 992px) {
   body,
   .app-shell,
   .filter-bar {
     max-width: 960px;
+  }
+
+  .filter-menu {
+    min-width: 480px;
+    max-width: 600px;
   }
 
   .tile-container {
