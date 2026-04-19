@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Tracker</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg app-navbar">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-calendar-heart me-1"></i>Event Tracker
+            </a>
+
+            <!--Hamburger button-->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navDrawer" aria-controls="navDrawer">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!--Hamburger menu from left-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navDrawer" aria-labelledby="navDrawerLabel">
+        <div class="offcanvas-header border-bottom">
+            <h6 class="offcanvas-title fw-bold" id="navDrawerLabel">
+                <i class="bi bi-calendar-heart me-1 text-primary"></i>Event Tracker
+            </h6>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <ul class="navbar-nav flex-column gap-1 flex-grow-1">
+                <li class="nav-item"><a class="nav-link px-2 py-2 rounded nav-drawer-link" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                <li class="nav-item"><a class="nav-link px-2 py-2 rounded nav-drawer-link" href="#"><i class="bi bi-people-fill me-2"></i>Community</a></li>
+                <li class="nav-item"><a class="nav-link px-2 py-2 rounded nav-drawer-link" href="#"><i class="bi bi-geo-alt-fill me-2"></i>Map</a></li>
+                <li class="nav-item"><a class="nav-link px-2 py-2 rounded nav-drawer-link" href="/event-list.html"><i class="bi bi-calendar-event me-2"></i>Event</a></li>
+                <li class="nav-item"><a class="nav-link px-2 py-2 rounded nav-drawer-link" href="#"><i class="bi bi-headset me-2"></i>Support</a></li>
+            </ul>
+
+            <!--Profile section at bottom-->
+            <div class="border-top pt-3 mt-3">
+                <div class="d-flex align-items-center gap-2 px-2 mb-2">
+                    <i class="bi bi-person-circle fs-4 text-secondary"></i>
+                    <span class="fw-semibold small">User</span>
+                </div>
+                <ul class="navbar-nav flex-column gap-1">
+                    <li><a class="nav-link px-2 py-2 rounded nav-drawer-link" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                    <li><a class="nav-link px-2 py-2 rounded text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Greeting -->
+    <div class="container px-3 mt-4 mb-3">
+        <h5 class="fw-bold mb-0">Good morning 👋</h5>
+        <p class="text-muted small mb-0">Here's what's happening around you</p>
+    </div>
+
+    <!-- Announcement card -->
+    <div class="container px-3 mb-4">
+        <div class="announcement-card">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+                 alt="Orientation event" class="announcement-img">
+            <div class="announcement-body">
+                <span class="badge announcement-badge mb-1">New</span>
+                <h6 class="fw-bold mb-1">Student Orientation Event</h6>
+                <p class="small text-muted mb-0">New student event at VCU! Join and learn more about what you can do!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tile grid -->
+    <div class="container px-3 mb-2">
+        <p class="section-label">Menu Option</p>
+    </div>
+
+    <div class="container px-3">
+        <div class="row g-3 tile-row text-center">
+
+            <div class="col-6">
+                <a href="#" class="tile-container text-decoration-none">
+                    <i class="bi bi-person-circle tile-icon"></i>
+                    <span class="tile-label">Profile</span>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#" class="tile-container text-decoration-none">
+                    <i class="bi bi-people-fill tile-icon"></i>
+                    <span class="tile-label">Communities</span>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#" class="tile-container text-decoration-none">
+                    <i class="bi bi-geo-alt-fill tile-icon"></i>
+                    <span class="tile-label">Map</span>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="/event-list.html" class="tile-container text-decoration-none">
+                    <i class="bi bi-calendar-event tile-icon"></i>
+                    <span class="tile-label">Events</span>
+                </a>
+            </div>
+
+            <div class="col-12">
+                <a href="#" class="tile-container tile-wide text-decoration-none">
+                    <i class="bi bi-headset tile-icon"></i>
+                    <span class="tile-label">Support</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
