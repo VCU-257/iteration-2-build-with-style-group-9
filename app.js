@@ -43,6 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const filterForm = document.getElementById("filterForm");
   const keywordInput = document.getElementById("fm4");
+  const distanceInput = document.getElementById("fm1");
+  const sizeInput = document.getElementById("fm2");
+  const costInput = document.getElementById("fm3");
+
   const eventItems = document.querySelectorAll(".event-item");
   const resultsCount = document.getElementById("resultsCount");
   const filterSuccess = document.getElementById("filterSuccess");
@@ -50,18 +54,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function filterEvents() {
     const keyword = keywordInput.value.trim().toLowerCase();
+    const maxDistance = parseInt(distanceInput.value, 10);
+    const minSize = parseInt(sizeInput.value, 10);
+    const maxCost = parseInt(costInput.value, 10);
+
     let visibleCount = 0;
 
     eventItems.forEach((item) => {
       const title = item.dataset.title.toLowerCase();
       const category = item.dataset.category.toLowerCase();
+      const distance = parseInt(item.dataset.distance, 10);
+      const size = parseInt(item.dataset.size, 10);
+      const cost = parseInt(item.dataset.cost, 10);
 
       const matchesKeyword =
         keyword === "" ||
         title.includes(keyword) ||
         category.includes(keyword);
 
-      if (matchesKeyword) {
+      const matchesDistance = distance <= maxDistance || maxDistance === 0;
+      const matchesSize = size >= minSize;
+      const matchesCost = cost <= maxCost;
+
+      if (matchesKeyword && matchesDistance && matchesSize && matchesCost) {
         item.classList.remove("d-none");
         visibleCount++;
       } else {
