@@ -8,3 +8,5 @@
 [Naimul Naim README](Group%209%20READMEs/README-Naimul-Naim.md)
 
 [Tayah Mezick README](Group%209%20READMEs/README-Tayah-Mezick.md)
+
+[Lindsey Marandina README]()
