@@ -15,4 +15,4 @@ For iteration 2, I focused on styling and improving the JavaScript functionality
 
 ## 3. Live Site Link
 *Provide the GitHub Pages link to the specific page(s) you built.*
-* **Live URL:** 
+* **Live URL:** [Link to live page](https://vcu-257.github.io/iteration-2-build-with-style-group-9/event-details-page.html)

@@ -70,4 +70,4 @@ I made sure to understand all generated suggestions and modified them as needed 
 
 ## 5. Live Site Link
 
-Live URL: [Insert GitHub Pages Link Here]
+Live URL: [Link to live page](https://vcu-257.github.io/iteration-2-build-with-style-group-9/event-list.html)
