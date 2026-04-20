@@ -9,4 +9,4 @@
 
 [Tayah Mezick README](Group%209%20READMEs/README-Tayah-Mezick.md)
 
-[Lindsey Marandina README]()
+[Lindsey Marandina README](Group%209%20READMEs/README-Lindsey-Marandina.md)
