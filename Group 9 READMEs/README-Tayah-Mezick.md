@@ -12,7 +12,7 @@ I was tasked with making the navbar filter work and look cohesive to the rest of
 *I ended up not sticking to the plan, as there was more to do than we previously thought. Specifically, everything but collapse.*
 
 ## 3. Technical Challenges & Solutions
-[cite_start]
+
 *I did not do the risky updating part of the filtering system, as it is not necessary yet for our design. It will likely be the most complex portion of that page, as one of the filters is based on keywords.*
 
 *The hardest part was realizing that I was using the wrong version of Bootstrap, causing my dropup not to work. It took me an entire night to realize what I had was out of date.*
