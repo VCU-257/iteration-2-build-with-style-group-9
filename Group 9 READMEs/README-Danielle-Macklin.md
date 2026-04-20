@@ -9,5 +9,4 @@ The navbar includes links like Profile, Community, Map, Events, and Support.
 * **How it helped & What I learned:** The AI helped me understand how to use Bootstrap’s navbar and offcanvas components together to create a responsive design. It showed me how to structure the HTML and use the correct classes for the hamburger menu and dropdown navigation.
 
 ## 3. Live Site Link
-*Provide the GitHub Pages link to the specific page(s) you built.*
 * **Live URL:** [https://vcu-257.github.io/iteration-2-build-with-style-group-9/event-details-page.html]
