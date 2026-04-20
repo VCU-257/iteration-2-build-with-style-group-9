@@ -7,6 +7,7 @@ For iteration 2, I focused on styling and improving the JavaScript functionality
 * Added an export function to the event-details-page.
 * Ensured all pages are properly connected and consistently styled.
 * Verified there are no icon or font errors.
+* Added payment page for completed functionality.
 
 
 ## 2. AI / LLM Usage
